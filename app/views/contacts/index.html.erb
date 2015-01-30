@@ -1,33 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Contacts</h1>
+<% if flash[:notice] || flash[:alert] %>
+    <div class='flash'><%= flash[:notice] || flash[:alert] %></div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <header class="header">
+      <h1>CONTACTO can hold more that 75 unique contacts in its massive database!</h1>
+    </header>
+  </div>
+</div>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
+      <th colspan="4">Last name</th>
+      <th colspan="4">First name</th>
+      <th colspan="4">Email</th>
+      <th colspan="4">Phone number</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.first_name %></td>
-        <td><%= contact.last_name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <div id='contact-container'>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td colspan="4"><%= contact.last_name %></td>
+          <td colspan="4"><%= contact.first_name %></td>
+          <td colspan="4"><%= contact.email %></td>
+          <td colspan="4"><%= contact.phone %></td>
+          <td><%= link_to 'Show', contact %></td>
+          <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </div>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= render 'form' %>
+
+<div class="container">
+  <div class="row">
+    <header class="header">
+      <h1>Come back and see us anytime!</h1>
+    </header>
+  </div>
+</div>
