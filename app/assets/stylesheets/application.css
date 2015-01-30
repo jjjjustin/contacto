@@ -33,3 +33,18 @@ body {
 
 
 }
+
+.tables {
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 100px;
+  background-color: #740A0A;
+  border-top: 9px solid #919E00;
+  border-bottom: 9px solid #919E00;
+  text-align: center;
+  height: 150px;
+  color: #919E00;
+
+
+}

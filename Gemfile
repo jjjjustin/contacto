@@ -6,7 +6,8 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
+
 gem 'thin'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
